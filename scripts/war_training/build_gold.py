@@ -12,6 +12,7 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from gold_seed import (  # noqa: E402
+    CLINICAL_QUESTIONS,
     DDI_RANK_GOLD,
     GUIDELINE_ELIGIBILITY,
     MISMATCH_TABLE,
@@ -30,6 +31,7 @@ def main() -> None:
         "ddi_rank_gold.json": DDI_RANK_GOLD,
         "guideline_eligibility.json": GUIDELINE_ELIGIBILITY,
         "tool_trace_labels.json": TOOL_TRACE_LABELS,
+        "clinical_questions.json": CLINICAL_QUESTIONS,
     }
     for name, payload in payloads.items():
         path = OUT_DIR / name

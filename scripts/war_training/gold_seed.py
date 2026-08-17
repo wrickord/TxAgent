@@ -133,7 +133,7 @@ MISMATCH_TABLE = [
         "field": "height",
         "self_report": "6 ft",
         "chart": "5 ft 11 in (180.3 cm)",
-        "label": "disagree_prefer_chart",
+        "label": "overstated",
     },
     {
         "field": "celiac_diagnosis",
@@ -177,6 +177,37 @@ MISMATCH_TABLE = [
         "chart": "recovered TSH, negative antibodies, diffuse goiter, not Graves",
         "label": "overstated",
     },
+    {
+        "field": "cam_fai",
+        "self_report": "not mentioned; pelvic pain attributed only to hypertonic floor / pudendal neuralgia",
+        "chart": "bilateral cam FAI (R>L) on XR and MRI; pubic symphysis normal",
+        "label": "missing_from_self",
+    },
+    {
+        "field": "zio_monitor",
+        "self_report": "not mentioned",
+        "chart": "8-day Zio on Loniten: no significant arrhythmia",
+        "label": "missing_from_self",
+    },
+]
+
+MISMATCH_LABELS = [
+    "agree",
+    "overstated",
+    "missing_from_chart",
+    "missing_from_self",
+    "route_mismatch",
+]
+
+DDI_PRIORITIES = ["ignore", "timing", "monitor", "discuss_now"]
+
+CLINICAL_QUESTIONS = [
+    "Is the current medication regimen safe given orthostatic lightheadedness?",
+    "What drug-drug interactions matter in this patient, not just the full DrugBank list?",
+    "Is oral minoxidil a poor match with baclofen and a wide pulse pressure?",
+    "Is dupilumab a good fit for eosinophilic esophagitis on this chart?",
+    "How should HLA-DQ2 be interpreted versus a celiac diagnosis?",
+    "What tools should be used for pairwise FDA and DrugBank interactions if the analyzer agent times out?",
 ]
 
 # Patient-conditioned DDI priority for THIS case.

@@ -1,6 +1,6 @@
 # personal
-patient/WAR/
-results/
+patient/WAR
+results
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

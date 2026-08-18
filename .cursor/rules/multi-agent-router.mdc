@@ -1,0 +1,38 @@
+---
+description: How to route "use multiple agents" — supervisor + k<=N isolated functional workers, never N personas
+alwaysApply: true
+---
+
+# Multi-agent router
+
+When asked to "use multiple agents" (or given a count like "use 5 agents"), treat the
+number as a **cap, not a headcount**.
+
+## Order of preference
+
+1. **One strong agent.** Most tasks. Extra agents add coordination cost, duplicated
+   context, and merge risk.
+2. **Supervisor + ephemeral workers.** Decompose the task into genuinely independent
+   workstreams, then spawn **one worker per workstream, capped at N**. If the work is
+   sequential, run `k = 1` and say why.
+3. **Differentiate by function, not persona.** Workers should differ by what they
+   investigate (`literature`, `experiments`, `analysis`, `methods`, `failures`,
+   `hypotheses`, `verifier`), never by tone (`Skeptic`, `Historian`). Personas produce
+   differently-worded copies of the same answer.
+4. **Blackboard + persistent teams** only for long-running open-ended search.
+5. **Debate / cross-talk is opt-in.** Isolated workers give independent evidence;
+   discussion makes them converge. Only add it when asked.
+
+## Rules
+
+- Never spawn a fixed number of subagents just to match a number in the request.
+- Never pad: if 2 workstreams exist and N is 5, spawn 2.
+- Always report `k of N` and, when `k == 1`, the reason the task was sequential.
+- Give each worker only its own workstream plus shared paths — not the whole panel.
+- Finish with one synthesizer pass that produces a single merged deliverable.
+
+## Canonical policy
+
+`agents/src/tools/clawlab/ARCHITECTURE.md` (in the sibling `agents` checkout when
+present). This rule is the self-contained summary; that file holds the routing table,
+the job catalog, and the `meta.json` contract.

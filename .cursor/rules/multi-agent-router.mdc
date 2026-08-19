@@ -33,6 +33,6 @@ number as a **cap, not a headcount**.
 
 ## Canonical policy
 
-`agents/src/tools/clawlab/ARCHITECTURE.md` (in the sibling `agents` checkout when
+`agents/src/clawlab/ARCHITECTURE.md` (in the sibling `agents` checkout when
 present). This rule is the self-contained summary; that file holds the routing table,
 the job catalog, and the `meta.json` contract.
